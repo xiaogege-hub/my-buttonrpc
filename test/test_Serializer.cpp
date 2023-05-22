@@ -163,7 +163,7 @@ int main() {
     cout << serial_2.size() << " " << c_2_ans << " " << num_2_ans << " " << s_2_ans << " " << f_2_ans << " " << ss_2_ans << " " << aa_2_ans.m << " " << aa_2_ans.n << " " << aa_2_ans.k << endl;
 
     //---------------test for << >> sequence ---------------
-    Serializer serial_3;
+    /*Serializer serial_3;
     char c_3 = 'L'; 
     int num_3 = 9527; 
     serial_3 >> c_3 >> num_3;
@@ -171,7 +171,16 @@ int main() {
     char c_3_ans; 
     int num_3_ans = 0; 
     serial_3 << num_3_ans << c_3_ans; //必须按顺序读
-    cout << c_3_ans << " " << num_3_ans << endl;
+    cout << c_3_ans << " " << num_3_ans << endl;*/
+
+    //-------------------------test during coding ---------------------
+    Serializer serial_4;
+    string func_name = "foo_1";
+    serial_4 >> func_name;
+    cout << serial_4.size() << endl;
+    string zmq_content = string(serial_4.all_data(), serial_4.size());
+    cout << zmq_content.size() << endl;
+    cout << zmq_content << endl;
     
     return 0;
 }
